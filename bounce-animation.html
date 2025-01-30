@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce Animation</title>
+    <style>
+        .stage {
+            width: 97vw;
+            height: 50vh;
+            margin: 0 auto;
+            border: 2px solid steelblue;
+            background-color: aqua;
+        }
+
+        .ball {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            background-color: yellow;
+            position: relative;
+            /* animation: ping-pong 2s ease-in-out 0.5s 3 alternate none; */
+            animation: bounce 2s ease-in-out 0.5s infinite alternate none;
+        }
+
+        @keyframes ping-pong {
+            from{
+                left: 0;
+
+            }
+            to{
+                /* left: 88.7vw; */
+                left: calc(97vw - 8rem);
+                background-color: red;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                top:0;
+                left: 0;
+            }
+
+            25% {
+                left: 24.25vw;
+                top: calc(50vh - 8rem);
+                background-color: red;
+            }
+
+            50% {
+                left: 48.5vw;
+                top: 0;
+                background-color: yellow;
+            }
+
+            100% {
+                left: calc(97vw - 8rem);
+                top:calc(50vh - 8rem);
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Explore Animation</h2>
+    <div class="stage">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>
